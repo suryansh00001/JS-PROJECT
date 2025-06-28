@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+#status {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  min-height: 2em;
+  text-shadow: 1px 1px 2px #000;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: white;
+  color: #764ba2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Optional: Winning glow effect */
+.winning {
+  background-color: #00e676 !important;
+  box-shadow: 0 0 20px #00e676, 0 0 30px #00e676;
+  color: #111;
+  animation: flash 0.8s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    box-shadow: 0 0 10px #00e676;
+  }
+  to {
+    box-shadow: 0 0 30px #00e676;
+  }
+}
